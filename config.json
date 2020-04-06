@@ -1,0 +1,5 @@
+{
+	"port": 8000,
+	"liveTime": 600000,
+	"pingHost": "google.com"
+}

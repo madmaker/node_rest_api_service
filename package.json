@@ -1,0 +1,25 @@
+{
+  "name": "erpaerotest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.2.0",
+    "mongoose": "^5.9.7",
+    "mysql": "^2.18.1",
+    "passport": "^0.4.1",
+    "restify-cors-middleware": "^1.1.1"
+  },
+  "devDependencies": {
+    "passport-http-bearer": "^1.0.1",
+    "restify": "^8.5.1",
+    "winston": "^3.2.1"
+  }
+}
