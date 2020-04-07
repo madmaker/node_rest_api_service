@@ -97,7 +97,7 @@ I use Postman (https://www.postman.com) software to test API
         * refresh_token
     * выдает:
         * новый access_token
-* /signup [POST] - выдает Access и Refresh токны в ответ на email и пароль нового пользователя
+* /signup [POST] - выдает Access и Refresh токены в ответ на email и пароль нового пользователя
     * принимает в теле запроса:
         * user - email пользователя
         * password - пароль пользователя
