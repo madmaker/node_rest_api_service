@@ -26,18 +26,18 @@ app.get('/info', passport.authenticate('bearer', { session: false }), Handlers.i
 app.get('/logout', passport.authenticate('bearer', { session: false }), Handlers.logout);
 app.get('/latency', passport.authenticate('bearer', { session: false }), Handlers.latency);
 
-app.get('/file', passport.authenticate('bearer', { session: false }), Handlers.fileInfo);
 app.get('/file/list', passport.authenticate('bearer', { session: false }), Handlers.fileList);
-app.get('/file/download', passport.authenticate('bearer', { session: false }), Handlers.fileDownload);
+app.get('/file/download/:id', passport.authenticate('bearer', { session: false }), Handlers.fileDownload);
+app.delete('/file/delete/:id', passport.authenticate('bearer', { session: false }), Handlers.fileDelete);
+app.post('/file/upload', passport.authenticate('bearer', { session: false }), Handlers.fileUpload);
+app.put('/file/update/:id', passport.authenticate('bearer', { session: false }), Handlers.fileUpdate);
+app.get('/file/:id', passport.authenticate('bearer', { session: false }), Handlers.fileInfo);
 
-app.delete('/file/delete', passport.authenticate('bearer', { session: false }), Handlers.fileDelete);
 
 app.post('/signin', Handlers.signin);
 app.post('/signin/new_token', Handlers.refresh);
 app.post('/signup', Handlers.signup);
 
-app.post('/file/upload', passport.authenticate('bearer', { session: false }), Handlers.fileUpload);
-app.put('/file/update', passport.authenticate('bearer', { session: false }), Handlers.fileUpdate);
 
 app.listen(config.port, ()=>{
     console.log('server up & listening at '+config.port);

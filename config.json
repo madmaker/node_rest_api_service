@@ -1,5 +1,8 @@
 {
 	"port": 8000,
-	"liveTime": 600000,
-	"pingHost": "google.com"
+	"pingHost": "google.com",
+	"DBHost": "localhost",
+	"DBUser"     : "365dev_dbuser",
+	"DBPassword" : "ZtyIyGSf",
+	"DBName" : "365dev_pages"
 }

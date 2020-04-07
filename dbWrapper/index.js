@@ -1,12 +1,13 @@
 const mysql = require('mysql');
 const crypto = require('crypto');
+const config = require('../config');
 
 // mongoose.connect(config.db);
 const db = mysql.createConnection({
-    host     : 'localhost',
-    user     : '365dev_dbuser',
-    password : 'ZtyIyGSf',
-    database : '365dev_pages'
+    host     : config.DBHost,
+    user     : config.DBUser,
+    password : config.DBPassword,
+    database : config.DBName
 });
 
 db.connect(function(err) {

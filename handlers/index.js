@@ -148,17 +148,10 @@ async function fileUpdate(req,res,next) {
             });
             next();
         } else {
-            let params;
-            try {
-                params = JSON.parse(JSON.stringify(req.body));
-            } catch (e) {
-                return next(new errs.BadRequestError('could not parse json request body'))
-            }
-
-            if(typeof params.id==="undefined") {
+            if(typeof req.params.id==="undefined") {
                 return next(new errs.BadRequestError('File not found'));
             }
-            let fileId=params.id;
+            let fileId=req.params.id;
 
             let oldFile=await dbWrapper.fileInfo(fileId);
 
@@ -197,17 +190,10 @@ async function fileUpdate(req,res,next) {
     }
 }
 async function fileInfo(req, res, next) {
-    let params;
-    try {
-        params = JSON.parse(JSON.stringify(req.body));
-    } catch (e) {
-        return next(new errs.BadRequestError('could not parse json request body'))
-    }
-
-    if(typeof params.id==="undefined") {
+    if(typeof req.params.id==="undefined") {
         return next(new errs.BadRequestError('File not found'));
     }
-    let fileId=params.id;
+    let fileId=req.params.id;
 
     let file=await dbWrapper.fileInfo(fileId);
     if(file) {
@@ -232,7 +218,7 @@ async function fileList(req, res, next) {
     }
 
     let list_size;
-    let page=params.page;
+    let page;
 
     if(typeof params.list_size!=="undefined") {
         list_size=params.list_size;
@@ -260,17 +246,10 @@ async function fileList(req, res, next) {
     return next();
 }
 async function fileDelete(req, res, next) {
-    let params;
-    try {
-        params = JSON.parse(JSON.stringify(req.body));
-    } catch (e) {
-        return next(new errs.BadRequestError('could not parse json request body'))
-    }
-
-    if(typeof params.id==="undefined") {
+    if(typeof req.params.id==="undefined") {
         return next(new errs.BadRequestError('File not found'));
     }
-    let fileId=params.id;
+    let fileId=req.params.id;
 
     let file=await dbWrapper.fileInfo(fileId);
 
@@ -288,17 +267,10 @@ async function fileDelete(req, res, next) {
     return next(new errs.BadRequestError('File not found'));
 }
 async function fileDownload(req, res, next) {
-    let params;
-    try {
-        params = JSON.parse(JSON.stringify(req.body));
-    } catch (e) {
-        return next(new errs.BadRequestError('could not parse json request body'))
-    }
-
-    if(typeof params.id==="undefined") {
+    if(typeof req.params.id==="undefined") {
         return next(new errs.BadRequestError('File not found'));
     }
-    let fileId=params.id;
+    let fileId=req.params.id;
 
     let file=await dbWrapper.fileInfo(fileId);
 
