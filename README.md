@@ -84,7 +84,7 @@ I use Postman (https://www.postman.com) software to test API
 *	После выхода необходимо получить новый токен;
 *	Старый должен перестать работать;
 
-## API Refference
+## API Reference
 * /signin [POST] - выдает Access и Refresh токены в ответ на email и пароль зарегистрированного пользователя
     * принимает в теле запроса:
         * user - email пользователя
