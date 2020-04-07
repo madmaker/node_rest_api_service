@@ -49,7 +49,7 @@ create table Files
 );
 
 ~~~~
-* open congig.json and set configurations:
+* open config.json and set configurations:
     * port - application port
     * pingHost - host that ping on /latency call
     * DBHost - MySql Database host
