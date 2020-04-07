@@ -12,10 +12,15 @@
   "license": "ISC",
   "dependencies": {
     "async": "^3.2.0",
+    "body-parser": "latest",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.7-alpha.2",
     "mongoose": "^5.9.7",
     "mysql": "^2.18.1",
     "passport": "^0.4.1",
-    "restify-cors-middleware": "^1.1.1"
+    "restify-cors-middleware": "^1.1.1",
+    "restify-errors": "latest",
+    "rimraf": "latest"
   },
   "devDependencies": {
     "passport-http-bearer": "^1.0.1",
